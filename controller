@@ -1,0 +1,67 @@
+
+
+package com.example.demo.controller;
+
+import com.example.demo.entity.boardDTO;
+import io.swagger.models.Model;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+@RestController
+@RequestMapping("board")
+public class boardController {
+
+    private boardDTO boardDTO;
+
+    @RequestMapping(value = "list",method= RequestMethod.GET)
+    public ArrayList<boardDTO> boardlist(){
+
+        ArrayList<boardDTO> list = new ArrayList<>();
+
+        return list;
+    }
+
+    @RequestMapping(value = "writeform", method= RequestMethod.POST)
+    public boardDTO boardWrite(@RequestBody boardDTO boardDTO){
+
+        boardDTO bdto = new boardDTO();
+
+        return bdto;
+    }
+
+    @RequestMapping(value="detail/{idx}", method = RequestMethod.GET)
+    public boardDTO boardDetail(@PathVariable int idx){
+
+        boardDTO bdto = new boardDTO();
+
+        return bdto;
+    }
+
+    @RequestMapping(value = "updateform/{idx}", method = RequestMethod.PUT)
+    public boardDTO boardUpdate(@PathVariable int idx,@RequestBody boardDTO boardDTO,@RequestHeader(value = "userId") String userId){
+
+        boardDTO bdto = new boardDTO();
+        
+        return bdto;
+    }
+
+    @RequestMapping(value="boarddto/{idx}", method = RequestMethod.DELETE)
+    public ArrayList<boardDTO> boardDelete(@PathVariable int idx,@RequestHeader(value = "userId") String userId){
+        
+        ArrayList<boardDTO> list = new ArrayList<>();
+        
+        return list;
+    }
+
+
+
+
+}
